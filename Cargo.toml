@@ -1,0 +1,20 @@
+[package]
+name = "fltk_fastbuild"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+
+
+[dependencies]
+fltk = { version = "1.4.3", features = ["fltk-bundled"] }
+fltk-theme = "0.7"
+directories = "5.0.1"
+serde_json = "1.0.96"
